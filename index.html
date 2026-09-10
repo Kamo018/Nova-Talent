@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Talent Management | Modeling Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="logo">Nova<span>Talent Management</span></div>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="siteNav">
+      <button class="nav-link active" data-page="home" onclick="showPage('home')">Home</button>
+      <button class="nav-link" data-page="about" onclick="showPage('about')">About</button>
+      <button class="nav-link" data-page="work" onclick="showPage('work')">Our Work</button>
+      <button class="nav-link" data-page="models" onclick="showPage('models')">Models</button>
+      <button class="nav-link" data-page="join" onclick="showPage('join')">Join</button>
+      <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact</button>
+    </nav>
+  </header>
+
+  <!-- Page Sections -->
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="page-section active">
+      <div class="hero-full">
+        <div class="hero-split">
+          <div class="hero-text">
+            <p class="eyebrow">Nova Talent Management — Est. 2026</p>
+            <h1>Faces that<br><em>set the pace.</em></h1>
+            <p class="hero-sub">Fresh Faces. Bold Talent. Endless Possibilities.</p>
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="showPage('models')">Explore Our Talent →</button>
+              <button class="btn-ghost" onclick="showPage('join')">Apply to Join</button>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <div class="hero-slideshow" id="heroSlideshow"></div>
+            <div class="hero-fade"></div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>RUNWAY</span><span>·</span><span>EDITORIAL</span><span>·</span><span>CAMPAIGN</span><span>·</span><span>COMMERCIAL</span><span>·</span><span>PRINT</span><span>·</span>
+          <span>RUNWAY</span><span>·</span><span>EDITORIAL</span><span>·</span><span>CAMPAIGN</span><span>·</span><span>COMMERCIAL</span><span>·</span><span>PRINT</span><span>·</span>
+        </div>
+      </div>
+      <div class="container home-strip">
+        <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Models Represented</span></div>
+        <div class="stat"><span class="stat-num">18</span><span class="stat-label">Countries Booked</span></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Years in Business</span></div>
+      </div> -->
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page-section">
+      <div class="container narrow">
+        <p class="eyebrow">About</p>
+        <h2>The agency</h2>
+        <p class="lead">Founded in 2026, Nova Talent Management is a South African talent agency dedicated to discovering, developing and representing fresh dynamic talent across the acting and modelling industry</p>
+        <p>We believe great talent can come from anywhere. Our mission is to uncover distinctive new faces and personalities, provide them with meaningful opportunities, and connect them with brands, productions and creative teams that value authentic talent
+          With a focus on commercial work, film, television, advertising and modelling, Nova Talent Management takes a fresh and forward-thinking approach to talent representation. We are passionate about building careers, not just casting faces, supporting our talent as they grow, evolve and make their mark in the industry
+        </p>
+        <div class="value-grid">
+          <div class="value">
+            <h3>Ethical management</h3>
+            <p>Transparent contracts, fair pay, and models who are informed partners in every booking decision.</p>
+          </div>
+          <div class="value">
+            <h3>Creative diversity</h3>
+            <p>We build rosters that reflect the industries we work with, not a single narrow standard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR WORK -->
+    <section id="work" class="page-section">
+      <div class="container">
+        <p class="eyebrow">Our Work</p>
+        <h2>See Nova in motion</h2>
+        <p class="lead">A quick look at recent shoots, campaigns, and the talent we represent.</p>
+        <div class="work-video-wrap">
+          <video id="workVideo" class="work-video" controls muted playsinline>
+            <source src="videos/our-work-reel.mp4" type="video/mp4">
+            Your browser doesn't support embedded video — you can download the clip instead.
+          </video>
+        </div>
+
+        <h3 class="category-heading">Photos</h3>
+        <div class="work-photo-grid">
+          <div class="work-photo" onclick="openWorkPhoto(this)">
+  <img src="images/work1.jpg" alt="Behind the scenes — campaign shoot">
+</div>
+<div class="work-photo" onclick="openWorkPhoto(this)">
+  <img src="images/work2.jpg" alt="Behind the scenes — campaign shoot">
+</div>
+<div class="work-photo" onclick="openWorkPhoto(this)">
+  <img src="images/work3.jpg" alt="Behind the scenes — campaign shoot">
+</div>
+<div class="work-photo" onclick="openWorkPhoto(this)">
+  <img src="images/work4.jpg" alt="Behind the scenes — campaign shoot">
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELS -->
+    <section id="models" class="page-section">
+      <div class="container">
+        <h2>Talent</h2>
+
+        <div class="category-filter">
+          <button class="filter-btn active" data-category="all" onclick="filterModels('all')">All</button>
+          <button class="filter-btn" data-category="women" onclick="filterModels('women')">Women</button>
+          <button class="filter-btn" data-category="men" onclick="filterModels('men')">Men</button>
+          <button class="filter-btn" data-category="kids" onclick="filterModels('kids')">Kids &amp; Teens</button>
+        </div>
+
+        <!-- WOMEN -->
+        <div class="model-category" data-category-group="women">
+          <h3 class="category-heading">Women</h3>
+          <div class="models-grid">
+            <div class="model-card"
+                 onclick="openModelProfile(this)"
+                 data-name="Baatile Modise"
+                 data-category="Women"
+                 data-bio="Age: 22
+                 Height: 148cm
+                 Weight: 43"
+                 data-images="images/Baatile2.jpg, images/Baatile3.jpg, images/Baatile4.jpg"
+                 data-video=""
+                 data-instagram="https://www.instagram.com/luusanda.m?stkn=MTJxbG5zc2Vocm1yMQ%3D%3D&utm_source=qr"
+                 data-tiktok=""
+                 data-website="">
+              <img src="images/Baatile2.jpg" alt="Baatile Modise" class="model-img">
+              <h3>Baatile Modise</h3>
+              <p></p>
+            </div>
+            <div class="model-card" onclick="openModelProfile(this)">
+            </div>
+          </div>
+        </div>
+
+        <!-- MEN -->
+        <div class="model-category" data-category-group="men">
+          <h3 class="category-heading">Men</h3>
+          <div class="models-grid">
+            <div class="model-card"
+                 onclick="openModelProfile(this)"
+                 data-name="Kamohelo Motloung"
+                 data-category="Men"
+                 data-bio="Age: 20
+                 Location: Cosmo Creek
+                 Height: 170cm
+                 Weight: 63"
+                 data-images="images/Kamo1.jpg, images/Kamo2.jpg, images/Kamo3.jpg"
+                 data-video=""
+                 data-instagram="https://www.instagram.com/kaymo_018?stkn=ZmZrcTQ2cWdmYXE2"
+                 data-tiktok=""
+                 data-website="">
+              <img src="images/Kamo1.jpg" alt="Kamohelo Motloung" class="model-img">
+              <h3>Kamohelo Motloung</h3>
+              <p></p>
+            </div>
+            <div class="model-card" onclick="openModelProfile(this)">
+            </div>
+          </div>
+        </div>
+
+        <!-- KIDS / TEENS -->
+        <div class="model-category" data-category-group="kids">
+          <h3 class="category-heading">Kids &amp; Teens</h3>
+          <div class="models-grid">
+            <div class="model-card" onclick="openModelProfile(this)">
+              <div class="img-placeholder">Photo</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- JOIN / APPLY -->
+    <section id="join" class="page-section">
+      <div class="container narrow">
+        <p class="eyebrow">Join Nova Talent</p>
+        <h2>Apply to the agency</h2>
+        <p class="lead">Tell us about yourself and our team will be in contact.</p>
+
+        <form class="app-form" name="application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" onsubmit="handleApply(event)">
+          <input type="hidden" name="form-name" value="application" />
+          <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <label>Full name
+              <input type="text" name="fullName" required />
+            </label>
+            <label>Date of birth
+              <input type="date" name="dob" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>City / Country
+              <input type="text" name="location" placeholder="e.g. Johannesburg, South Africa" required />
+            </label>
+            <!-- <label>Category
+              <select name="category" required>
+                <option value="">Select one</option>
+                <option value="runway">Runway</option>
+                <option value="editorial">Editorial</option>
+                <option value="commercial">Commercial</option>
+                <option value="print">Print</option>
+                <option value="new-face">New Face / Unsure</option>
+              </select>
+            </label>
+          </div> -->
+
+          <div class="form-row three">
+            <label>Height
+              <input type="text" name="height" placeholder="e.g. 178 cm" />
+            </label>
+            <label>Bust/Chest
+              <input type="text" name="bust" placeholder="e.g. 86 cm" />
+            </label>
+            <label>Waist
+              <input type="text" name="waist" placeholder="e.g. 61 cm" />
+            </label>
+          </div>
+
+          <!-- <label>Instagram or portfolio link
+            <input type="text" name="portfolio" placeholder="@handle or URL" />
+          </label> -->
+
+          <label>Tell us about yourself
+            <textarea name="message" rows="4" placeholder="Experience, availability, anything else we should know..."></textarea>
+          </label>
+
+          <label class="file-label">Photos (portrait, full-length, natural light)
+            <input type="file" name="photos" accept="image/*" multiple />
+          </label>
+
+          <label class="file-label">Intro video (optional)
+            <input type="file" name="video" accept="video/*" />
+            <span class="field-hint">A short 10–30 second clip of you introducing yourself.</span>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" name="consent" required />
+            <span>I confirm the information above is accurate and I'm at least 16 years old, or a parent/guardian is submitting on my behalf.</span>
+          </label>
+
+          <button type="submit" class="btn-primary">Submit Application</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page-section">
+      <div class="container narrow">
+        <p class="eyebrow">Contact</p>
+        <h2>Bookings &amp; inquiries</h2>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleContact(event)">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <select name="type" required>
+            <option value="">Inquiry Type</option>
+            <option value="booking">Model Booking</option>
+            <option value="scouting">Application</option>
+            <!-- <option value="press">Press / Media</option> -->
+          </select>
+          <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/talent_nova?stkn=MXNpNGlpcncybTQ5ZQ==" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.3" cy="6.7" r="1"/>
+          </svg>
+        </a>
+
+        <!-- TikTok: uncomment and add the link once the account is live -->
+        <!--
+        <a href="TIKTOK_URL_HERE" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4c.3 2.2 1.9 3.9 4 4.1v3.1c-1.5 0-2.9-.5-4-1.3V15a5 5 0 1 1-5-5c.2 0 .3 0 .5 0v3.2a2 2 0 1 0 1.5 1.9V4H16Z"/>
+          </svg>
+        </a>
+        -->
+
+        <a href="https://www.facebook.com/share/1Pf8hcYi98/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M14 9h-1.5c-.8 0-1.5.7-1.5 1.5V12h3l-.4 3H11v6"/>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/27716588202" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 5.5c0-1.1.9-2 2-2h2.1c.5 0 .9.3 1.1.8l1 2.9c.2.5 0 1-.4 1.3L7.6 9.7c1 2.3 2.9 4.2 5.2 5.2l1.2-1.2c.3-.4.8-.5 1.3-.4l2.9 1c.5.2.8.6.8 1.1V17.9c0 1.1-.9 2-2 2h-1C9.5 19.9 4.1 14.5 4.1 8.3v-1Z"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer-contact">
+        <a href="https://wa.me/27716588202" target="_blank" rel="noopener">WhatsApp: +27 71 658 8202</a>
+      </p>
+
+      <p>&copy; 2026 Nova Talent Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Our Work photo lightbox -->
+  <div class="lightbox-overlay" id="workLightbox" onclick="closeWorkLightboxOnOverlay(event)">
+    <button class="lightbox-close" onclick="closeWorkLightbox()" aria-label="Close">&times;</button>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Model Profile Modal -->
+  <div class="modal-overlay" id="modelModal" onclick="closeModelProfileOnOverlay(event)">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Model profile">
+      <button class="modal-close" onclick="closeModelProfile()" aria-label="Close">&times;</button>
+      <div class="modal-gallery" id="modalGallery"></div>
+      <div class="modal-info">
+        <p class="eyebrow" id="modalCategory"></p>
+        <h2 id="modalName"></h2>
+        <p class="lead" id="modalBio"></p>
+        <div class="modal-video-wrap" id="modalVideoWrap"></div>
+        <div class="modal-socials" id="modalSocials"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
