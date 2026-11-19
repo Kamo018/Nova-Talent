@@ -241,7 +241,8 @@ function handleContact(event) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data).toString()
   })
-    .then(() => {
+    .then(response => {
+      if (!response.ok) throw new Error('Form submission failed: ' + response.status);
       showToast("Thanks for reaching out — we'll be in touch shortly.");
       form.reset();
     })
@@ -259,7 +260,8 @@ function handleApply(event) {
     method: 'POST',
     body: data
   })
-    .then(() => {
+    .then(response => {
+      if (!response.ok) throw new Error('Form submission failed: ' + response.status);
       showToast("Application received — our scouting team will review it soon.");
       form.reset();
     })
