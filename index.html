@@ -115,6 +115,13 @@
       </div>
     </section>
 
+
+
+
+
+
+    
+
     <!-- MODELS -->
     <section id="models" class="page-section">
       <div class="container">
@@ -126,6 +133,12 @@
           <button class="filter-btn" data-category="men" onclick="filterModels('men')">Men</button>
           <button class="filter-btn" data-category="kids" onclick="filterModels('kids')">Kids &amp; Teens</button>
         </div>
+
+
+
+
+
+
 
         <!-- WOMEN -->
         <div class="model-category" data-category-group="women">
@@ -151,6 +164,9 @@
             </div>
           </div>
         </div>
+
+
+
 
         <!-- MEN -->
         <div class="model-category" data-category-group="men">
@@ -178,6 +194,12 @@
           </div>
         </div>
 
+
+
+
+
+
+
         <!-- KIDS / TEENS -->
         <div class="model-category" data-category-group="kids">
           <h3 class="category-heading">Kids &amp; Teens</h3>
@@ -191,6 +213,13 @@
       </div>
     </section>
 
+
+
+
+
+
+
+
     <!-- JOIN / APPLY -->
     <section id="join" class="page-section">
       <div class="container narrow">
@@ -198,7 +227,7 @@
         <h2>Apply to the agency</h2>
         <p class="lead">Tell us about yourself and our team will be in contact.</p>
 
-        <form class="app-form" name="application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" onsubmit="handleApply(event)">
+        <form class="app-form" name="application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleApply(event)">
           <input type="hidden" name="form-name" value="application" />
           <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
 
@@ -233,8 +262,8 @@
                 <option value="print">Print</option>
                 <option value="new-face">New Face / Unsure</option>
               </select>
-            </label>
-          </div> -->
+            </label> -->
+          </div>
 
           <div class="form-row three">
             <label>Height
@@ -256,12 +285,17 @@
             <textarea name="message" rows="4" placeholder="Experience, availability, anything else we should know..."></textarea>
           </label>
 
-          <label class="file-label">Photos (portrait, full-length, natural light)
-            <input type="file" name="photos" accept="image/*" multiple />
+          <label>Instagram or portfolio link
+            <input type="text" name="portfolio" placeholder="@handle or URL" />
           </label>
 
-          <label class="file-label">Intro video (optional)
-            <input type="file" name="video" accept="video/*" />
+          <label>Photo links (portrait, full-length, natural light)
+            <textarea name="photoLinks" rows="3" placeholder="Paste up to 3 links to your photos (Google Drive, Dropbox, Instagram...)"></textarea>
+            <span class="field-hint">Set each link to "anyone with the link can view" so our team can open it.</span>
+          </label>
+
+          <label>Intro video link (optional)
+            <input type="text" name="videoLink" placeholder="YouTube, Google Drive or Instagram link" />
             <span class="field-hint">A short 10–30 second clip of you introducing yourself.</span>
           </label>
 
