@@ -254,11 +254,12 @@ function handleContact(event) {
 function handleApply(event) {
   event.preventDefault();
   const form = event.target;
-  const data = new FormData(form); // sent as-is (multipart) so photo uploads go through
+  const data = new FormData(form);
 
   fetch('/', {
     method: 'POST',
-    body: data
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
   })
     .then(response => {
       if (!response.ok) throw new Error('Form submission failed: ' + response.status);
