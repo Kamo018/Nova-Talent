@@ -229,7 +229,7 @@
 
         <form class="app-form" name="application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleApply(event)">
           <input type="hidden" name="form-name" value="application" />
-          <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+          <p class="hidden-field" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
           <div class="form-row">
             <label>Full name
@@ -316,7 +316,7 @@
         <h2>Bookings &amp; inquiries</h2>
         <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleContact(event)">
           <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+          <p class="hidden-field" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
